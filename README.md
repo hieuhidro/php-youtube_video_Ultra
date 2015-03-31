@@ -30,6 +30,8 @@ The latest stable version can be downloaded from the downloads tab, or using the
     }
 ?>
 ```
+
+Thank's: for get ID Video from URL `https://github.com/eyecatchup/php-yt_downloader` to use this options
 `$ytNew->process("http://www.youtube.com/watch?v=aahOEZKTCzU");` is identical to new
 
 `$ytNew->process("https://www.youtube.com/watch?feature=related&v=aahOEZKTCzU");` is identical to new
