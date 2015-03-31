@@ -30,4 +30,8 @@ The latest stable version can be downloaded from the downloads tab, or using the
     }
 ?>
 ```
-`$ytNew->process("http://www.youtube.com/watch?v=aahOEZKTCzU");` is identical to new `$ytNew->process("https://www.youtube.com/watch?feature=related&v=aahOEZKTCzU");` is identical to new `$ytNew->process("aahOEZKTCzU");`
+`$ytNew->process("http://www.youtube.com/watch?v=aahOEZKTCzU");` is identical to new
+
+`$ytNew->process("https://www.youtube.com/watch?feature=related&v=aahOEZKTCzU");` is identical to new
+
+`$ytNew->process("aahOEZKTCzU");`
