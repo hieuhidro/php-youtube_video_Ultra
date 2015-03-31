@@ -1,23 +1,23 @@
 # php-youtube_getvideo
  *  ==========================================================================
- *  PHP class to get the file location of Youtube videos, mp3 audio download the video
+##PHP class to get the file location of Youtube videos, mp3 audio download the video
  *  ==========================================================================
  *  Introduction
 
-This PHP class takes a YouTube URL (or YouTube Video-ID) and downloads the video, mp3 audio download the video to your computer.
+##This PHP class takes a YouTube URL (or YouTube Video-ID) and downloads the video, mp3 audio download the video to your computer.
 
-<h2>UI Demo</h2>
+##UI Demo
 
 For an example integration, try the demo:
 
-Download
+##Download
 
 The latest stable version can be downloaded from the downloads tab, or using the following link:
 
-Basic Usage
+##Basic Usage
 
-Usage is pretty straight forward:
-[code]
+##Usage is pretty straight forward:
+```php
 <?php
     require('class.func.php');
     try {
@@ -29,5 +29,5 @@ Usage is pretty straight forward:
         die($e->getMessage());
     }
 ?>
-[Code]
-$ytNew->process("http://www.youtube.com/watch?v=aahOEZKTCzU"); is identical to new $ytNew->process("https://www.youtube.com/watch?feature=related&v=aahOEZKTCzU"); is identical to new $ytNew->process("aahOEZKTCzU");
+```
+`$ytNew->process("http://www.youtube.com/watch?v=aahOEZKTCzU");` is identical to new `$ytNew->process("https://www.youtube.com/watch?feature=related&v=aahOEZKTCzU");` is identical to new `$ytNew->process("aahOEZKTCzU");`
