@@ -17,7 +17,7 @@ The latest stable version can be downloaded from the downloads tab, or using the
 Basic Usage
 
 Usage is pretty straight forward:
-
+[code]
 <?php
     require('class.func.php');
     try {
@@ -28,5 +28,6 @@ Usage is pretty straight forward:
     catch (Exception $e) {
         die($e->getMessage());
     }
-
+?>
+[Code]
 $ytNew->process("http://www.youtube.com/watch?v=aahOEZKTCzU"); is identical to new $ytNew->process("https://www.youtube.com/watch?feature=related&v=aahOEZKTCzU"); is identical to new $ytNew->process("aahOEZKTCzU");
