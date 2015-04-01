@@ -19,15 +19,23 @@ The latest stable version can be downloaded from the downloads tab, or using the
 ##Usage is pretty straight forward:
 ```php
 <?php
-    require('class.func.php');
-    try {
-        // Instantly download a YouTube video (using the default settings).
-        $ytNew = new YoutubeAvailible()
-        $ytNew->process('http://www.youtube.com/watch?v=aahOEZKTCzU');
+    function sendRequest($data, $url) {
+        $data = http_build_query($data);
+        $context_options = array('http' => array('method' => 'POST', 'header' => "Content-type: application/x-www-form-urlencoded\r\n" . "Content-Length: " . strlen($data) . "\r\n", 'content' => $data));
+    
+        $context = stream_context_create($context_options);
+        $result = file_get_contents($url, false, $context, -1, 40000);
+        return $result;
     }
-    catch (Exception $e) {
-        die($e->getMessage());
-    }
+    
+    $data = array(
+        'keyConnect'=>"sg4yucpdinusy4pw14c1byxszn5zpuhorusglass@rng.vn",
+        'url' => 'http://www.youtube.com/watch?v=aahOEZKTCzU'
+    );
+    $request = json_decode(sendRequest($data,"http://youtubeservice.herokuapp.com/")); 
+    $title = $request->title;
+    $thumbnail = $request->thumbnail;
+    $files = $request->data;   
 ?>
 ```
 
