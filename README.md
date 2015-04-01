@@ -1,6 +1,10 @@
 # php-youtube_getvideo
  *  ==========================================================================
 ##PHP class to get the file location of Youtube videos, mp3 audio download the video
+** Get file mp3
+** Get file 3gp
+** Get file flv 
+** Get file mp4 (720p, Ultra HD, 2K, 4K Video)
  *  ==========================================================================
  *  Introduction
 
