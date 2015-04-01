@@ -8,7 +8,7 @@
 
 ##UI Demo
 
-For an example integration, try the demo:
+For an example integration, try the demo: `https://youtubeservice.herokuapp.com/view.php#`
 
 ##Download
 
