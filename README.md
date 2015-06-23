@@ -37,6 +37,7 @@ The latest stable version can be downloaded from the downloads tab, or using the
 /**
  * (c) Copyright 2015 Hoang Hieu. All Rights Reserved.
  */
+require('anazyne.php');
 header('Access-Control-Allow-Methods: POST');
 header('Content-Type: application/json; charset=UTF-8');
 // Downloading HD Videos may take some time.
