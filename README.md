@@ -14,6 +14,7 @@
 ##UI Demo
 
 For an example integration, try the demo: `https://youtubeservice.herokuapp.com/view.php#`
+Or Master Example with download Ultra HD with include Audio. :`http://360.horusvr.com`
 
 ##Download
 
@@ -22,25 +23,57 @@ The latest stable version can be downloaded from the downloads tab, or using the
 ##Basic Usage
 
 ##Usage is pretty straight forward:
+<h3>Anazyne Youtube Video and audio </h3>
 ```php
 <?php
-    function sendRequest($data, $url) {
-        $data = http_build_query($data);
-        $context_options = array('http' => array('method' => 'POST', 'header' => "Content-type: application/x-www-form-urlencoded\r\n" . "Content-Length: " . strlen($data) . "\r\n", 'content' => $data));
-    
-        $context = stream_context_create($context_options);
-        $result = file_get_contents($url, false, $context, -1, 40000);
-        return $result;
+    require('class.youtube.php');
+    $hydro->process($_POST['url'])){
+    echo $hydro->toJson(); 
+?>
+```
+<h3>Anazyne Youtube Mage Video and audio to one file</h3>
+```php
+
+/**
+ * (c) Copyright 2015 Hoang. All Rights Reserved.
+ */
+header('Access-Control-Allow-Origin: 360.horusvr.vn');
+header('Access-Control-Allow-Methods: POST');
+header('Content-Type: application/json; charset=UTF-8');
+// Downloading HD Videos may take some time.
+ini_set('max_execution_time', 0);
+// Writing HD Videos to your disk, may need some extra resources.
+ini_set('memory_limit', '64M');
+$Gbyt = new GbYoutube();
+if (getRequest('yturl') && getRequest('mp3url') && getRequest('videoId') && getRequest('itag') && getRequest('title') && getRequest('token')) {
+    $token = md5(base64_encode(md5(getRequest('yturl') . getRequest('title') . getRequest('itag') . getRequest('videoId'))));
+    if (getRequest('token') == $token) {
+        $mertTitle = 'Out_youtubeid_' . getRequest('videoId') . '_' . getRequest('itag');
+        if (!file_exists('outvideos/' . $OutTitle . '.mp4')) {
+            $mp3Title = $Gbyt -> audioToServer(getRequest('mp3url'), getRequest('videoId'));
+            $videoTitle = $Gbyt -> videoToServer(getRequest('videoId'), getRequest('yturl'), getRequest('itag'));
+            if ($mp3Title && $videoTitle) {
+                try {
+                    $mertTitle = $Gbyt -> mergingAudio($videoTitle, $mp3Title);
+                    echo json_encode(array('url' => $mertTitle, 'msg' => 'successful'));
+                } catch(exception $err) {
+                    json_encode(array('msg' => $err -> getMessage(), 'status' => 'error'));
+                }
+            } else {
+                echo json_encode(array('msg' => "Download file failed", 'status' => 'error'));
+            }
+        } else {
+            echo json_encode(array('url' => $mertTitle, 'msg' => 'successful'));
+        }
+    } else {
+        echo json_encode(array('msg' => "Invalidate token", 'status' => 'error'));
     }
+} else {
+    echo json_encode(array('msg' => "Invalidate request", 'status' => 'error'));
+}
+
+<?php 
     
-    $data = array(
-        'keyConnect'=>"sg4yucpdinusy4pw14c1byxszn5zpuhorusglass@rng.vn",
-        'url' => 'http://www.youtube.com/watch?v=aahOEZKTCzU'
-    );
-    $request = json_decode(sendRequest($data,"http://youtubeservice.herokuapp.com/")); 
-    $title = $request->title;
-    $thumbnail = $request->thumbnail;
-    $files = $request->data;   
 ?>
 ```
 
