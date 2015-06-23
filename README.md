@@ -35,9 +35,8 @@ The latest stable version can be downloaded from the downloads tab, or using the
 ```php
 
 /**
- * (c) Copyright 2015 Hoang. All Rights Reserved.
+ * (c) Copyright 2015 Hoang Hieu. All Rights Reserved.
  */
-header('Access-Control-Allow-Origin: 360.horusvr.vn');
 header('Access-Control-Allow-Methods: POST');
 header('Content-Type: application/json; charset=UTF-8');
 // Downloading HD Videos may take some time.
