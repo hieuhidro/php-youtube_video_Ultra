@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Php-youtube video ultra by thien321091</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Php-youtube video ultra</h1>
+      <h2 class="project-tagline">Get video HD, Ultra HD from youtube URL with audio</h2>
+      <a href="https://github.com/thien321091/php-youtube_video_Ultra" class="btn">View on GitHub</a>
+      <a href="https://github.com/thien321091/php-youtube_video_Ultra/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/thien321091/php-youtube_video_Ultra/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p>Youtube Downloader. Youtube UltraHD download,Youtube HD download, youtube mp3 download</p>
+
+<h1>
+<a id="php-youtube_getvideo" class="anchor" href="#php-youtube_getvideo" aria-hidden="true"><span class="octicon octicon-link"></span></a>php-youtube_getvideo</h1>
+
+<ul>
+<li> ==========================================================================</li>
+<li> </li>
+<li>##PHP class to get the file location of Youtube videos, mp3 audio download the video</li>
+<li>Get file mp3</li>
+<li>Get file 3gp</li>
+<li>Get file flv </li>
+<li>Get file mp4 (720p, Ultra HD, 2K, 4K Video)</li>
+<li> ==========================================================================</li>
+<li> Introduction</li>
+</ul>
+
+<h2>
+<a id="this-php-class-takes-a-youtube-url-or-youtube-video-id-and-downloads-the-video-mp3-audio-download-the-video-to-your-computer" class="anchor" href="#this-php-class-takes-a-youtube-url-or-youtube-video-id-and-downloads-the-video-mp3-audio-download-the-video-to-your-computer" aria-hidden="true"><span class="octicon octicon-link"></span></a>This PHP class takes a YouTube URL (or YouTube Video-ID) and downloads the video, mp3 audio download the video to your computer.</h2>
+
+<h2>
+<a id="ui-demo" class="anchor" href="#ui-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>UI Demo</h2>
+
+<p>For an example integration, try the demo: <code>https://youtubeservice.herokuapp.com/view.php#</code>
+Or Master Example with download Ultra HD with include Audio. :<code>http://360.horusvr.com</code></p>
+
+<h2>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download</h2>
+
+<p>The latest stable version can be downloaded from the downloads tab, or using the following link:</p>
+
+<h2>
+<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage</h2>
+
+<h2>
+<a id="usage-is-pretty-straight-forward" class="anchor" href="#usage-is-pretty-straight-forward" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage is pretty straight forward:</h2>
+
+<h3>
+<a id="anazyne-youtube-video-and-audio-" class="anchor" href="#anazyne-youtube-video-and-audio-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Anazyne Youtube Video and audio </h3>
+
+<div class="highlight highlight-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-k">require</span>(<span class="pl-s"><span class="pl-pds">'</span>class.youtube.php<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">    <span class="pl-smi">$hydro</span><span class="pl-k">-&gt;</span>process(<span class="pl-smi">$_POST</span>[<span class="pl-s"><span class="pl-pds">'</span>url<span class="pl-pds">'</span></span>])){</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$hydro</span><span class="pl-k">-&gt;</span>toJson(); </span>
+<span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></pre></div>
+
+<h3>
+<a id="anazyne-youtube-mage-video-and-audio-to-one-file" class="anchor" href="#anazyne-youtube-mage-video-and-audio-to-one-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Anazyne Youtube Mage Video and audio to one file</h3>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/**</span></span>
+<span class="pl-s1"><span class="pl-c"> * (c) Copyright 2015 Hoang Hieu. All Rights Reserved.</span></span>
+<span class="pl-s1"><span class="pl-c"> */</span></span>
+<span class="pl-s1"><span class="pl-k">require</span>(<span class="pl-s"><span class="pl-pds">'</span>anazyne.php<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>Access-Control-Allow-Methods: POST<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-c1">header</span>(<span class="pl-s"><span class="pl-pds">'</span>Content-Type: application/json; charset=UTF-8<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-c">// Downloading HD Videos may take some time.</span></span>
+<span class="pl-s1"><span class="pl-c1">ini_set</span>(<span class="pl-s"><span class="pl-pds">'</span>max_execution_time<span class="pl-pds">'</span></span>, <span class="pl-c1">0</span>);</span>
+<span class="pl-s1"><span class="pl-c">// Writing HD Videos to your disk, may need some extra resources.</span></span>
+<span class="pl-s1"><span class="pl-c1">ini_set</span>(<span class="pl-s"><span class="pl-pds">'</span>memory_limit<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>64M<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$Gbyt</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">GbYoutube</span>();</span>
+<span class="pl-s1"><span class="pl-k">if</span> (getRequest(<span class="pl-s"><span class="pl-pds">'</span>yturl<span class="pl-pds">'</span></span>) <span class="pl-k">&amp;&amp;</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>mp3url<span class="pl-pds">'</span></span>) <span class="pl-k">&amp;&amp;</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>videoId<span class="pl-pds">'</span></span>) <span class="pl-k">&amp;&amp;</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>itag<span class="pl-pds">'</span></span>) <span class="pl-k">&amp;&amp;</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>) <span class="pl-k">&amp;&amp;</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>token<span class="pl-pds">'</span></span>)) {</span>
+<span class="pl-s1">    <span class="pl-smi">$token</span> <span class="pl-k">=</span> <span class="pl-c1">md5</span>(<span class="pl-c1">base64_encode</span>(<span class="pl-c1">md5</span>(getRequest(<span class="pl-s"><span class="pl-pds">'</span>yturl<span class="pl-pds">'</span></span>) <span class="pl-k">.</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>) <span class="pl-k">.</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>itag<span class="pl-pds">'</span></span>) <span class="pl-k">.</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>videoId<span class="pl-pds">'</span></span>))));</span>
+<span class="pl-s1">    <span class="pl-k">if</span> (getRequest(<span class="pl-s"><span class="pl-pds">'</span>token<span class="pl-pds">'</span></span>) <span class="pl-k">==</span> <span class="pl-smi">$token</span>) {</span>
+<span class="pl-s1">        <span class="pl-smi">$mertTitle</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Out_youtubeid_<span class="pl-pds">'</span></span> <span class="pl-k">.</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>videoId<span class="pl-pds">'</span></span>) <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>_<span class="pl-pds">'</span></span> <span class="pl-k">.</span> getRequest(<span class="pl-s"><span class="pl-pds">'</span>itag<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">        <span class="pl-k">if</span> (<span class="pl-k">!</span><span class="pl-c1">file_exists</span>(<span class="pl-s"><span class="pl-pds">'</span>outvideos/<span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-smi">$OutTitle</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>.mp4<span class="pl-pds">'</span></span>)) {</span>
+<span class="pl-s1">            <span class="pl-smi">$mp3Title</span> <span class="pl-k">=</span> <span class="pl-smi">$Gbyt</span> <span class="pl-k">-&gt;</span> audioToServer(getRequest(<span class="pl-s"><span class="pl-pds">'</span>mp3url<span class="pl-pds">'</span></span>), getRequest(<span class="pl-s"><span class="pl-pds">'</span>videoId<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">            <span class="pl-smi">$videoTitle</span> <span class="pl-k">=</span> <span class="pl-smi">$Gbyt</span> <span class="pl-k">-&gt;</span> videoToServer(getRequest(<span class="pl-s"><span class="pl-pds">'</span>videoId<span class="pl-pds">'</span></span>), getRequest(<span class="pl-s"><span class="pl-pds">'</span>yturl<span class="pl-pds">'</span></span>), getRequest(<span class="pl-s"><span class="pl-pds">'</span>itag<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">            <span class="pl-k">if</span> (<span class="pl-smi">$mp3Title</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">$videoTitle</span>) {</span>
+<span class="pl-s1">                <span class="pl-k">try</span> {</span>
+<span class="pl-s1">                    <span class="pl-smi">$mertTitle</span> <span class="pl-k">=</span> <span class="pl-smi">$Gbyt</span> <span class="pl-k">-&gt;</span> mergingAudio(<span class="pl-smi">$videoTitle</span>, <span class="pl-smi">$mp3Title</span>);</span>
+<span class="pl-s1">                    <span class="pl-c1">echo</span> <span class="pl-c1">json_encode</span>(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>url<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$mertTitle</span>, <span class="pl-s"><span class="pl-pds">'</span>msg<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>successful<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">                } <span class="pl-k">catch</span>(<span class="pl-c1">exception</span> <span class="pl-smi">$err</span>) {</span>
+<span class="pl-s1">                    <span class="pl-c1">json_encode</span>(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>msg<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$err</span> <span class="pl-k">-&gt;</span> getMessage(), <span class="pl-s"><span class="pl-pds">'</span>status<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">                }</span>
+<span class="pl-s1">            } <span class="pl-k">else</span> {</span>
+<span class="pl-s1">                <span class="pl-c1">echo</span> <span class="pl-c1">json_encode</span>(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>msg<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>Download file failed<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">'</span>status<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">            }</span>
+<span class="pl-s1">        } <span class="pl-k">else</span> {</span>
+<span class="pl-s1">            <span class="pl-c1">echo</span> <span class="pl-c1">json_encode</span>(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>url<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$mertTitle</span>, <span class="pl-s"><span class="pl-pds">'</span>msg<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>successful<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">        }</span>
+<span class="pl-s1">    } <span class="pl-k">else</span> {</span>
+<span class="pl-s1">        <span class="pl-c1">echo</span> <span class="pl-c1">json_encode</span>(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>msg<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>Invalidate token<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">'</span>status<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1">} <span class="pl-k">else</span> {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-c1">json_encode</span>(<span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>msg<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">"</span>Invalidate request<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">'</span>status<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">}</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">&lt;</span>?<span class="pl-c1">php</span> </span>
+<span class="pl-s1"></span>
+<span class="pl-s1"></span><span class="pl-pse"><span class="pl-s1">?</span>&gt;</span></pre></div>
+
+<p>Thank's: for get ID Video from URL <code>https://github.com/eyecatchup/php-yt_downloader</code> to use this options</p>
+
+<p><code>$ytNew-&gt;process("http://www.youtube.com/watch?v=aahOEZKTCzU");</code> is identical to new</p>
+
+<p><code>$ytNew-&gt;process("https://www.youtube.com/watch?feature=related&amp;v=aahOEZKTCzU");</code> is identical to new</p>
+
+<p><code>$ytNew-&gt;process("aahOEZKTCzU");</code></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/thien321091/php-youtube_video_Ultra">Php-youtube video ultra</a> is maintained by <a href="https://github.com/thien321091">thien321091</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
