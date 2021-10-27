@@ -11,8 +11,8 @@
  *  @version     class.func.php
  *  @author      Hoàng Hiếu <hieu.gh@gmail.com>
  *  @copyright   Copyright 2015 Hoang Hieu. All Rights Reserved.
- *  @license     https://github.com/thien321091/
- *  @link        https://github.com/thien321091/php-youtube_getvideo/
+ *  @license     https://github.com/hieuhidro/
+ *  @link        https://github.com/hieuhidro/php-youtube_getvideo/
  *  ================================================================================
  *  LICENSE: Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the "Software"),
